@@ -16,9 +16,8 @@ public class Project17298 {
             data[i] = Integer.parseInt(st.nextToken());
 
         for(int i=0; i<n; i++) {
-            while(!stack.isEmpty() && (data[stack.peek()] < data[i])){
+            while(!stack.isEmpty() && (data[stack.peek()] < data[i]))
                 data[stack.pop()] = data[i];
-            }
             stack.push(i);
         }
 
