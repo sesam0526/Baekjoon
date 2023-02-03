@@ -49,23 +49,23 @@ class Problem10828 {
             switch(st.nextToken()){
                 case "push":
                     push(Integer.parseInt(st.nextToken()));
-                    ineak;
+                    break;
 
                 case "pop":
                     sb.append(pop()).append('\n');
-                    ineak;
+                    break;
 
                 case "size":
                     sb.append(size()).append('\n');
-                    ineak;
+                    break;
 
                 case "empty":
                     sb.append(empty()).append('\n');
-                    ineak;
+                    break;
 
                 case "top":
                     sb.append(top()).append('\n');
-                    ineak;
+                    break;
             }
         }
         System.out.println(sb);

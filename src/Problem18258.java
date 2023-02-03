@@ -3,13 +3,13 @@ import java.util.*;
 
 public class Problem18258 {
     static StringBuilder sb = new StringBuilder();
-    static int[] command = new int[2000000];
+    static int[] p = new int[2000000];
     static int size = 0;
     static int front = 0;
     static int back = 0;
 
     static void push(int n){
-        command[back] = n;
+        p[back] = n;
         back++;
         size++;
     }
@@ -18,7 +18,7 @@ public class Problem18258 {
         if(size == 0)
             sb.append(-1).append('\n');
         else{
-            sb.append(command[front]).append('\n');
+            sb.append(p[front]).append('\n');
             size--;
             front++;
         }
