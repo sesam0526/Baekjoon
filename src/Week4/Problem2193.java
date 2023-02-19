@@ -9,10 +9,10 @@ public class Problem2193 {
         int N = Integer.parseInt(in.readLine());
 
         long method[] = new long[91];
-        method[0] = 0;
         method[1] = 1;
+        method[2] = 1;
 
-        for (int i = 2; i <= N; i++) {
+        for (int i = 3; i <= N; i++) {
             method[i] = method[i - 1] + method[i - 2];
         }
 
