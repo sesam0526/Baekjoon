@@ -1,3 +1,5 @@
+package Week2;
+
 import java.io.*;
 import java.util.*;
 
@@ -9,7 +11,7 @@ public class Problem1966 {
 
         int n = Integer.parseInt(in.readLine());
 
-        while(n-- > 0){
+        while (n-- > 0) {
             StringTokenizer st = new StringTokenizer(in.readLine(), " ");
 
             int N = Integer.parseInt(st.nextToken());
@@ -18,11 +20,11 @@ public class Problem1966 {
             LinkedList<int[]> queue = new LinkedList<>();
             st = new StringTokenizer(in.readLine());
 
-            for(int i=0; i<N; i++)
+            for (int i = 0; i < N; i++)
                 queue.add(new int[]{i, Integer.parseInt(st.nextToken())});
 
             int count = 0;
-            while(!queue.isEmpty()) {
+            while (!queue.isEmpty()) {
                 int[] front = queue.remove();
                 boolean flag = true;
 
@@ -32,11 +34,10 @@ public class Problem1966 {
                         break;
                     }
                 }
-                if(flag){
+                if (flag) {
                     count++;
-                    if(front[0] == M) break;
-                }
-                else queue.add(front);
+                    if (front[0] == M) break;
+                } else queue.add(front);
             }
             sb.append(count).append('\n');
         }

@@ -1,8 +1,10 @@
+package Week2;
+
 import java.io.*;
 import java.util.*;
 
 class Problem1406 {
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
@@ -11,29 +13,29 @@ class Problem1406 {
 
         String str = in.readLine();   // abcd
 
-        for(int i=0; i<str.length(); i++)
+        for (int i = 0; i < str.length(); i++)
             leftStack.push(str.charAt(i));
 
         int n = Integer.parseInt(in.readLine());   // 3
 
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             String cmd = in.readLine();
 
-            switch(cmd.charAt(0)){
+            switch (cmd.charAt(0)) {
                 case 'L':
-                    if(leftStack.empty())
+                    if (leftStack.empty())
                         break;
                     rightStack.push(leftStack.pop());
                     break;
 
                 case 'D':
-                    if(rightStack.empty())
+                    if (rightStack.empty())
                         break;
                     leftStack.push(rightStack.pop());
                     break;
 
                 case 'B':
-                    if(leftStack.empty())
+                    if (leftStack.empty())
                         break;
                     leftStack.pop();
                     break;
@@ -44,10 +46,10 @@ class Problem1406 {
             }
         }
 
-        while(!leftStack.empty())
+        while (!leftStack.empty())
             rightStack.push(leftStack.pop());
 
-        while(!rightStack.empty())
+        while (!rightStack.empty())
             sb.append(rightStack.pop());
 
         System.out.println(sb);

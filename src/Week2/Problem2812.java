@@ -1,8 +1,10 @@
+package Week2;
+
 import java.io.*;
 import java.util.*;
 
 public class Problem2812 {
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(in.readLine());
         StringBuilder sb = new StringBuilder();
@@ -14,16 +16,16 @@ public class Problem2812 {
 
         String s = in.readLine();
         int count = 0;
-        for(int i=0; i<N; i++){
+        for (int i = 0; i < N; i++) {
             int n = s.charAt(i) - '0';
 
-            while(!stack.isEmpty() && K > count && stack.peek() < n){
+            while (!stack.isEmpty() && K > count && stack.peek() < n) {
                 stack.pop();
                 count++;
             }
             stack.push(n);
         }
-        for(int i=0; i<N-K; i++)
+        for (int i = 0; i < N - K; i++)
             sb.append(stack.get(i));
         System.out.print(sb);
     }
