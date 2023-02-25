@@ -18,7 +18,7 @@ public class Problem1012 {
             int nowX = X + dirX[i];
             int nowY = Y + dirY[i];
 
-            if(nowX < M && nowX >= 0 && nowY < N && nowY >= 0){
+            if (nowX < M && nowX >= 0 && nowY < N && nowY >= 0) {
                 if (!visited[nowX][nowY] && ground[nowX][nowY] == 1)
                     dfs(nowX, nowY);
             }

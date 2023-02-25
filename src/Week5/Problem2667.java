@@ -16,18 +16,18 @@ public class Problem2667 {
 
         map = new int[N][N];
         visited = new boolean[N][N];
-        apart = new int[N*N];
+        apart = new int[N * N];
 
-        for(int i=0; i<N; i++){
+        for (int i = 0; i < N; i++) {
             String input = in.readLine();
-            for(int j=0; j<N; j++){
-                map[i][j] = input.charAt(j)-'0';
+            for (int j = 0; j < N; j++) {
+                map[i][j] = input.charAt(j) - '0';
             }
         }
 
-        for(int i=0; i<N; i++){
-            for(int j=0; j<N; j++){
-                if(!visited[i][j] && map[i][j] == 1){
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (!visited[i][j] && map[i][j] == 1) {
                     apartNum++;
                     dfs(i, j);
                 }
@@ -37,8 +37,8 @@ public class Problem2667 {
         System.out.println(apartNum);
 
         Arrays.sort(apart);
-        for(int i=0; i<apart.length; i++){
-            if(apart[i] != 0)
+        for (int i = 0; i < apart.length; i++) {
+            if (apart[i] != 0)
                 System.out.println(apart[i]);
         }
     }
@@ -50,11 +50,11 @@ public class Problem2667 {
         visited[X][Y] = true;
         apart[apartNum]++;
 
-        for(int i=0; i<4; i++){
+        for (int i = 0; i < 4; i++) {
             int nowX = X + dirX[i];
             int nowY = Y + dirY[i];
 
-            if(nowX < N && nowX >= 0 && nowY < N && nowY >= 0){
+            if (nowX < N && nowX >= 0 && nowY < N && nowY >= 0) {
                 if (!visited[nowX][nowY] && map[nowX][nowY] == 1)
                     dfs(nowX, nowY);
             }
